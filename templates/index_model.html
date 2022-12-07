@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container contact-form">
+        <div class="contact-image">
+            <img src="static/archeologist.png"/>
+        </div>
+        <form action="{{url_for('predict')}}" method="post">
+            <h3>Rekomendasi Wisata DIY</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Rating" class="form-label">Rating</label>
+                        <input type="text" name="Rating" class="form-control" id="Rating" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Ulasan" class="form-label">Ulasan</label>
+                        <input type="text" name="Ulasan" class="form-control" id="Ulasan" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rata2_tiket" class="form-label">Rata-rata Tiket</label>
+                        <input type="text" name="rata2_tiket" class="form-control" id="rata2_tiket" required>
+                    </div>
+                    <div>
+                         <button type="submit" class="btn btn-success">prediksi</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <h4>Hasil Prediksi </h4>
+                        <p class="text-center">Tipe wisata yang direkomendasikan <span class="fw-bold">{{rec}}</span></p>
+                        <p class="text-center">Rekomendasi Tempat Wisata : <span class="fw-bold">{{rec_str}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- <br>
+    <br>
+    <h3 class="text-center">Hasil Prediksi</h3>
+        {% if hasil_prediksi %}
+        <p class="text-center">Tipe wisata yang direkomendasikan <span class="fw-bold">{{hasil_prediksi}}</span></p>
+        {% endif %}
+        
+        <p class="text-center">wisata yang direkomendasikan <span class="fw-bold">{{rekomendasi}}</span></p> -->
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
